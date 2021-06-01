@@ -24,6 +24,6 @@ fetch('https://raw.githubusercontent.com/manami-project/anime-offline-database/m
         console.log(`[+] created ${output.length/2} entries`);
         let arr = new Uint32Array(output);
         let buffer = Buffer.from(arr.buffer);
-        fs.writeFileSync('mappings.blob', buffer, 'binary')
+        fs.writeFileSync('soy.blob', buffer, 'binary')
         console.log(`[+] ${buffer.length} bytes written to mappings.blob`);
     });
