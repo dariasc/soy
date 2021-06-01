@@ -1,0 +1,11 @@
+{
+  "name": "feke",
+  "version": "1.0.0",
+  "main": "mappings.js",
+  "repository": "git@github.com:dariasc/soy.git",
+  "author": "Diego Arias <dariascauas@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}

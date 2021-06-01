@@ -1,0 +1,26 @@
+name: update
+on:
+  schedule: 
+  - cron: "00 00,12 * * *"
+  workflow_dispatch:
+
+jobs:
+  mappings:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+      - name: Install dependencies
+        run: yarn
+      - name: Generate mappings
+        run: node mappings.js
+      - name: Push changes
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "chore: update blob" || echo "no mapping changes!"
+          git push
